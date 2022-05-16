@@ -1,5 +1,6 @@
 const { Telegraf } = require('telegraf');
-const bot = new Telegraf('5381111345:AAGY3EvoeWgK7__ijYniTbvt6_u8IpuVytg');
+const token = require('./config').token;
+const bot = new Telegraf(token);
 const schedule = require('node-schedule');
 const fs = require('fs');
 const path = require('path');
@@ -60,6 +61,31 @@ bot.command('stopAmazon', ctx => {
     amazonJob.cancel();
     console.log(msg);
   }
+});
+
+// bot.on('text', ctx => ctx.reply('Default reply'));
+
+bot.command('addProd', ctx => {
+  const splittedArguments = ctx.message.text.split('#');
+  const link = splittedArguments[1];
+  const price = splittedArguments[2];
+  const name = link.split('/')[3];
+
+  const games = JSON.parse(fs.readFileSync(path.join(__dirname, 'amazonGames.json'), 'UTF-8'));
+
+  games.push({ name: name, link: link, limitPrice: price });
+
+  fs.writeFileSync(path.join(__dirname, 'amazonGames.json'), JSON.stringify(games), 'UTF-8');
+
+  bot.telegram.sendMessage(
+    ctx.chat.id,
+    'Product ' + link + ' added to watchlist at limit price of ' + price + "€, we'll let you know if lowers its price",
+    {}
+  );
+});
+
+bot.command('myName', ctx => {
+  bot.telegram.sendMessage(ctx.chat.id, 'My name is ' + ctx.from.first_name, {});
 });
 
 bot.launch();

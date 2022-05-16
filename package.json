@@ -14,6 +14,7 @@
     "moment": "^2.29.3",
     "node-schedule": "^2.1.0",
     "telegraf": "^4.8.2",
+    "telegraf-command-parts": "^1.0.3",
     "xpath": "0.0.32"
   }
 }
