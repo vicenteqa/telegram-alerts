@@ -1,0 +1,23 @@
+{
+  "workbench.colorTheme": "Synth Wave '84 Luis Reyes' Remix",
+  "peacock.color": "#1c6a66",
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#27928d",
+    "activityBar.activeBorder": "#e8b4eb",
+    "activityBar.background": "#27928d",
+    "activityBar.foreground": "#ffffff",
+    "activityBar.inactiveForeground": "#ffffff99",
+    "activityBarBadge.background": "#e8b4eb",
+    "activityBarBadge.foreground": "#000000",
+    "sash.hoverBorder": "#27928d",
+    "statusBar.background": "#1c6a66",
+    "statusBar.foreground": "#ffffff",
+    "statusBarItem.hoverBackground": "#27928d",
+    "statusBarItem.remoteBackground": "#1c6a66",
+    "statusBarItem.remoteForeground": "#ffffff",
+    "titleBar.activeBackground": "#1c6a66",
+    "titleBar.activeForeground": "#ffffff",
+    "titleBar.inactiveBackground": "#1c6a6699",
+    "titleBar.inactiveForeground": "#ffffff99"
+  }
+}

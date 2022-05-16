@@ -1,0 +1,19 @@
+{
+  "name": "ruina",
+  "version": "1.0.0",
+  "description": "checkForTickets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vicente Ruiz",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cheerio": "^1.0.0-rc.10",
+    "moment": "^2.29.3",
+    "node-schedule": "^2.1.0",
+    "telegraf": "^4.8.2",
+    "xpath": "0.0.32"
+  }
+}

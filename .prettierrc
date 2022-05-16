@@ -1,0 +1,19 @@
+{
+  "overrides": [
+    {
+      "files": [".eslintrc.json", "cypress/**/*.js"],
+      "options": {
+        "useTabs": true,
+        "eslintIntegration": true,
+        "arrowParens": "always"
+      }
+    }
+  ],
+  "arrowParens": "avoid",
+  "printWidth": 120,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "none",
+  "useTabs": false
+}
