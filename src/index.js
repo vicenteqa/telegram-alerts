@@ -8,9 +8,11 @@ const moment = require('moment');
 
 const checkLaRuinaTickets = require('./helpers').checkLaRuinaTickets;
 const checkGame = require('./helpers').checkGame;
+const checkTsushima = require('./helpers').checkTsushima;
 
 let ruinaJob;
 let amazonJob;
+let psJob;
 
 const cronTwiceDay = '0 22,13 * * *'; // every day at 00:00 and 13:00
 
@@ -52,6 +54,32 @@ bot.command('alertasAmazon', ctx => {
       });
     });
   });
+});
+
+bot.command('alertasPS', ctx => {
+  log(ctx.from.first_name, ' -> Enabled alerts for PS Store');
+
+  bot.telegram.sendMessage(ctx.chat.id, 'Alertas PS Store: Activadas', {});
+
+  psJob = schedule.scheduleJob(cronTwiceDay, () => {
+    checkTsushima().then(result => {
+      if (result !== undefined) {
+        log(ctx.from.first_name, ' -> Alert displayed for PS4 Game');
+
+        bot.telegram.sendMessage(ctx.chat.id, 'Ghost of Tsushima ha bajado de precio ' + result, {});
+      }
+    });
+  });
+});
+
+bot.command('stopPS', ctx => {
+  const msg = 'Alertas PS Store: Desactivadas';
+  bot.telegram.sendMessage(ctx.chat.id, msg, {});
+
+  if (ruinaJob) {
+    psJob.cancel();
+    console.log(msg);
+  }
 });
 
 bot.command('stopRuina', ctx => {
