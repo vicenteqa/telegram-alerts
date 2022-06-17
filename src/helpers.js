@@ -63,6 +63,6 @@ async function checkTsushima() {
   const rawPrice = $(priceSelector).text();
   const priceArray = rawPrice.split(' ')[0].split(',');
   const price = parseFloat(`${priceArray[0]}.${priceArray[1]}`);
-  if (price <= 22) return link;
+  if (price <= 15) return link;
   else return undefined;
 }
