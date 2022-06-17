@@ -61,15 +61,15 @@ bot.command('alertasPS', ctx => {
 
   bot.telegram.sendMessage(ctx.chat.id, 'Alertas PS Store: Activadas', {});
 
-  psJob = schedule.scheduleJob(cronTwiceDay, () => {
-    checkTsushima().then(result => {
-      if (result !== undefined) {
-        log(ctx.from.first_name, ' -> Alert displayed for PS4 Game');
+  // psJob = schedule.scheduleJob(cronTwiceDay, () => {
+  checkTsushima().then(result => {
+    if (result !== undefined) {
+      log(ctx.from.first_name, ' -> Alert displayed for PS4 Game');
 
-        bot.telegram.sendMessage(ctx.chat.id, 'Ghost of Tsushima ha bajado de precio ' + result, {});
-      }
-    });
+      bot.telegram.sendMessage(ctx.chat.id, 'Ghost of Tsushima ha bajado de precio ' + result, {});
+    }
   });
+  // });
 });
 
 bot.command('stopPS', ctx => {
