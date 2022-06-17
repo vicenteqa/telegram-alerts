@@ -18,7 +18,7 @@ bot.command('alertasRuina', ctx => {
   bot.telegram.sendMessage(ctx.chat.id, 'Alertas Ruina: Activadas', {});
 
   ruinaJob = schedule.scheduleJob('*/10 * * * * *', () => {
-    checkLaRuinaTickets('valencia').then(result => {
+    checkLaRuinaTickets('barcelona').then(result => {
       if (result !== undefined) {
         bot.telegram.sendMessage(
           ctx.chat.id,
