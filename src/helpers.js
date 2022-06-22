@@ -37,9 +37,7 @@ async function checkLaRuinaTickets(cityToLookForTickets) {
   } else return undefined;
 }
 
-exports.checkLaRuinaTickets = async function (cityToLookForTickets) {
-  return checkLaRuinaTickets(cityToLookForTickets);
-};
+exports.checkLaRuinaTickets = async cityToLookForTickets => checkLaRuinaTickets(cityToLookForTickets);
 
 exports.checkGame = async function (gameLink, limitPrice) {
   const { data } = await axios.get(gameLink);
@@ -51,9 +49,7 @@ exports.checkGame = async function (gameLink, limitPrice) {
   return originalResultWithoutCurrency <= limitPrice;
 };
 
-exports.checkTsushima = async function () {
-  return checkTsushima();
-};
+exports.checkTsushima = async () => checkTsushima();
 
 async function checkTsushima() {
   const link = 'https://store.playstation.com/es-es/product/EP9000-CUSA13323_00-GHOSTDIRECTORCUT';

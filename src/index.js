@@ -14,7 +14,7 @@ let ruinaJob;
 let amazonJob;
 let psJob;
 
-const cronTwiceDay = '0 22,13 * * *'; // every day at 00:00 and 13:00
+const cronTwiceDay = '0 22,13 * * *'; // every day at 22:00 & 13:00
 
 bot.command('alertasRuina', ctx => {
   bot.telegram.sendMessage(ctx.chat.id, 'Alertas Ruina: Activadas', {});
