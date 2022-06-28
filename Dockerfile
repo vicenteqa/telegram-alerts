@@ -2,7 +2,7 @@ FROM node:14.19.0
 
 WORKDIR /telegram-alerts
 
-COPY ["package.json", "package-lock.json*", "./"]
+COPY /home/pi/code/telegram-alerts /telegram-alerts
 
 RUN npm install
 

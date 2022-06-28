@@ -72,6 +72,13 @@ bot.command('alertasPS', ctx => {
   });
 });
 
+bot.command('help', ctx => {
+  log(ctx.from.first_name, ' -> Requested help');
+  bot.telegram.sendMessage(ctx.chat.id, '<a href="https://www.google.com/testtesttesttest">Click here to access</a>', {
+    disable_web_page_preview: true
+  });
+});
+
 bot.command('stopPS', ctx => {
   const msg = 'Alertas PS Store: Desactivadas';
   bot.telegram.sendMessage(ctx.chat.id, msg, {});
