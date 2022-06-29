@@ -1,11 +1,11 @@
 FROM node:14.19.0
 
-WORKDIR /telegram-alerts
+# WORKDIR /telegram-alerts
 
-COPY /* /telegram-alerts/
+COPY /* /
 
 RUN npm install
 
-EXPOSE 3000 443 88 8443
+EXPOSE 3000
 
 CMD [ "node", "src/index.js" ]
