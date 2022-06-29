@@ -1,8 +1,8 @@
 FROM node:14.19.0
 
-# WORKDIR /telegram-alerts
+WORKDIR /telegram-alerts
 
-COPY /* /
+COPY ./* .
 
 RUN npm install
 
