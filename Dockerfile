@@ -2,7 +2,7 @@ FROM node:14.19.0
 
 WORKDIR /telegram-alerts
 
-COPY /home/pi/code/telegram-alerts /telegram-alerts
+COPY /* /telegram-alerts/
 
 RUN npm install
 
