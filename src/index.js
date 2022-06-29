@@ -131,6 +131,7 @@ bot.command('agregarProd', ctx => {
   );
 });
 
+console.log('Bot Launched');
 bot.launch();
 
 function addProductToWatchList(rawProduct) {
