@@ -2,10 +2,9 @@ FROM node:14.19.0
 
 WORKDIR /telegram-alerts
 
-COPY ./* ./
+COPY ./ ./
 
-RUN pwd
-RUN ls
+COPY folder-to-copy/* /target/path/in/docker/image/
 
 RUN npm install
 
