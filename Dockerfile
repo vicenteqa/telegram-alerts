@@ -4,7 +4,7 @@ WORKDIR /telegram-alerts
 
 COPY ./ ./
 
-COPY folder-to-copy/* /target/path/in/docker/image/
+RUN ls
 
 RUN npm install
 
